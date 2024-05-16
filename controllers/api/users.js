@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
     create,
     login,
+    checkToken,
 };
 
 async function login(req, res) {
@@ -21,6 +22,7 @@ async function login(req, res) {
       }
 }
 
+
 async function create(req, res){
     try {
         console.log('test2')
@@ -34,6 +36,12 @@ async function create(req, res){
         res.status(400).json(error);
     }
 };
+
+function checkToken(req, res) {
+    // Verify middleware is doing its job
+    console.log('req.user', req.user);
+    res.json(req.exp);
+  }
 
 //helper functions
 function createJWT(user) {
