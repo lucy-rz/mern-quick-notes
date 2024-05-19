@@ -22,7 +22,7 @@ export default function CheckNotes({propUser}) {
                     <h1>check notes</h1>
                     <div className="NoteList">
                         {allNotes.map((n, idx) => (<div>
-                            <ul>{n.text}</ul>
+                            <ul>{n.text} - {n.createdAt.toLocaleString()}</ul>
                         </div>))}
                     </div>
                 </div>
