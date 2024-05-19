@@ -8,8 +8,6 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
       options.headers = { 'Content-Type': 'application/json' };
       options.body = JSON.stringify(payload);
     }
-
-    // Add the below code
   const token = getToken();
   if (token) {
     // Great use case for the Logical OR assignment operator

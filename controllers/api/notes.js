@@ -13,4 +13,5 @@ async function check(req, res){
 
 async function write(req, res){
     const writeNote = await Note.create(req.body);
+    res.status(200).json('haz post it')
 };
