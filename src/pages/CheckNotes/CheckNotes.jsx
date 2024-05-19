@@ -5,7 +5,7 @@ export default function CheckNotes({propUser}) {
     const [allNotes, setAllNotes] = useState();
 
     async function getAllNotes() {
-        const response = await sendRequest('/notes/checknotes', 'GET')
+        const response = await sendRequest('/notes/checknotes', 'POST', propUser)
         console.log(response)
         return setAllNotes(response)
     };
@@ -16,7 +16,7 @@ export default function CheckNotes({propUser}) {
 
 
     return(
-        <>
+        <> 
             {allNotes && (
                 <div>
                     <h1>check notes</h1>

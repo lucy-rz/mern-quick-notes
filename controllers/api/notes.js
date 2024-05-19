@@ -7,8 +7,9 @@ module.exports = {
 };
 
 async function check(req, res){
-    const allNotes = await Note.find({});
+    const allNotes = await Note.find({user: req.body});
     res.json(allNotes);
+    console.log(req.body)
 };
 
 async function write(req, res){
