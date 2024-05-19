@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import sendRequest from "../../utilities/send-request";
 
 export default function CheckNotes({propUser}) {
-    const [allNotes, setAllNotes] = useState();
+    const [allNotes, setAllNotes] = useState([]);
 
     async function getAllNotes() {
         const response = await sendRequest('/notes/checknotes', 'POST', propUser)
@@ -17,7 +17,7 @@ export default function CheckNotes({propUser}) {
 
     return(
         <> 
-            {allNotes && (
+            {allNotes.length !== 0 ? 
                 <div>
                     <h1>check notes</h1>
                     <div className="NoteList">
@@ -26,7 +26,9 @@ export default function CheckNotes({propUser}) {
                         </div>))}
                     </div>
                 </div>
-            )}
+                :
+                <div>No notes yet!</div>
+            }
         </>
     );
 }
