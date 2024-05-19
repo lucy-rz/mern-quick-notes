@@ -1,6 +1,5 @@
 import { useState } from "react";
 import sendRequest from "../../utilities/send-request";
-import { writeNote } from "../../utilities/notes-api";
 
 export default function WriteNote({propUser}) {
     const [newNote, setNewNote] = useState({note: ''});
@@ -8,7 +7,7 @@ export default function WriteNote({propUser}) {
     async function handleAddNote(evt) {
         evt.preventDefault();
         const noteData = {text: newNote.note, user: propUser}
-        const result = await writeNote(noteData)
+        const result = await sendRequest('/notes/writenote', 'POST', noteData)
         setNewNote({note: ''});
     }
 

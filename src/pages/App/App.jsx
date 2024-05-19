@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-services';
 import AuthPage from '../AuthPage/AuthPage';
 import WriteNote from '../../pages/WriteNote/WriteNote';
-import CheckNotes from '../../components/CheckNotes/CheckNotes';
+import CheckNotes from '../../pages/CheckNotes/CheckNotes';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
